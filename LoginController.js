@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Button, Image,} from 'react-native';
 import { Header, LearnMoreLinks, Colors, DebugInstructions, ReloadInstructions,} from 'react-native/Libraries/NewAppScreen';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-community/google-signin';
-
+var FBLoginButton = require('./FBLoginButton');
 export default class LoginController extends Component {
   constructor(props) {
     super(props);
@@ -13,7 +13,7 @@ export default class LoginController extends Component {
   }
   componentDidMount() {
     GoogleSignin.configure({
-      webClientId: '', 
+      webClientId: 'ID_FIREBASE_GOOGLE', 
       offlineAccess: true, 
       hostedDomain: '', 
       forceConsentPrompt: true, 
@@ -85,6 +85,7 @@ export default class LoginController extends Component {
                   color={GoogleSigninButton.Color.Dark}
                   onPress={this._signIn}
                   disabled={this.state.isSigninInProgress} />
+                  <FBLoginButton />
               </View>
               <View style={styles.buttonContainer}>
                 {!this.state.loggedIn && <Text>You are currently logged out</Text>}

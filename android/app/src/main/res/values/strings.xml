@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RNoauth</string>
+    <string name="facebook_app_id">CHAVE FACEBOOK</string>
 </resources>
